@@ -22,7 +22,7 @@ public class FireworkSurpriseHandler  implements SurpriseHandler {
             Firework firework = (Firework) shotLocation.getWorld().spawnEntity(shotLocation, EntityType.FIREWORK);
             FireworkMeta properties = firework.getFireworkMeta();
 
-            properties.setPower(25)
+            properties.setPower(25);
 
             int r = random.nextInt(256);
             int g = random.nextInt(256);
