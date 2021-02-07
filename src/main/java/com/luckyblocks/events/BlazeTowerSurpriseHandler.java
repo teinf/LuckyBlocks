@@ -13,7 +13,7 @@ public class BlazeTowerSurpriseHandler implements LuckyBlockSurpriseHandler {
         Random random = new Random();
 
         int towerSize = random.nextInt(4) + 3;
-        int blazeHealth = 0;
+        double blazeHealth = 0.1;
 
         Blaze blaze = (Blaze) player.getWorld().spawnEntity(block.getLocation(), EntityType.BLAZE);
         blaze.setHealth(blazeHealth);
