@@ -12,9 +12,11 @@ public class CobwebTrapSurpriseHandler implements LuckyBlockSurpriseHandler {
     public void run(Player player, Block block) {
         Random random = new Random();
 
+        boolean hasLuck = (Math.random() < 0.50);
+
         Location airLocation = block.getLocation().clone();
         int squareLength = random.nextInt(6) * 2 + 1;
-        int height = 7;
+        int height = 5; // >= 5
 
         for (int x = 0; x < squareLength; x++) {
             for (int y = 0; y < height; y++) {
@@ -30,6 +32,9 @@ public class CobwebTrapSurpriseHandler implements LuckyBlockSurpriseHandler {
         Location webLocation = block.getLocation().clone();
         Location lavaLocation = block.getLocation().clone();
         Location netherrackLocation = block.getLocation().clone();
+        Location waterLocation = block.getLocation().clone();
+        Location glowstoneLocation = block.getLocation().clone();
+
 
         int netherrackSquareLength = squareLength + 2;
         int netherrackHeight = 2;
@@ -44,13 +49,23 @@ public class CobwebTrapSurpriseHandler implements LuckyBlockSurpriseHandler {
                 webLocation.getBlock().setType(Material.COBWEB);
                 webLocation = block.getLocation().clone();
 
-                // Floor
-                netherrackLocation.add(x - (squareLength / 2), -height, z - (squareLength / 2));
-                netherrackLocation.getBlock().setType(Material.NETHERRACK);
-                netherrackLocation = block.getLocation().clone();
+                if (hasLuck) {
+                    // Floor
+                    glowstoneLocation.add(x - (squareLength / 2), -height, z - (squareLength / 2));
+                    glowstoneLocation.getBlock().setType(Material.GLOWSTONE);
+                    glowstoneLocation = block.getLocation().clone();
 
-                for (int y = 1; y <= 2; y++) {
-                    lavaLocation.add(x - (squareLength / 2), -height + y, z - (squareLength / 2));
+                    waterLocation.add(x - (squareLength / 2), -height + 1, z - (squareLength / 2));
+                    waterLocation.getBlock().setType(Material.WATER);
+                    waterLocation = block.getLocation().clone();
+                }
+                else {
+                    // Floor
+                    netherrackLocation.add(x - (squareLength / 2), -height, z - (squareLength / 2));
+                    netherrackLocation.getBlock().setType(Material.NETHERRACK);
+                    netherrackLocation = block.getLocation().clone();
+
+                    lavaLocation.add(x - (squareLength / 2), -height + 1, z - (squareLength / 2));
                     lavaLocation.getBlock().setType(Material.LAVA);
                     lavaLocation = block.getLocation().clone();
                 }
