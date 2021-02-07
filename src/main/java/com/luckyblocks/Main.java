@@ -2,6 +2,7 @@ package com.luckyblocks;
 
 import com.luckyblocks.commands.LuckyBlockCommandExecutor;
 import com.luckyblocks.items.ItemManager;
+import com.luckyblocks.listeners.CrossBowListener;
 import com.luckyblocks.listeners.LuckyBlockListener;
 import com.luckyblocks.tab_completers.LuckyBlockTabCompleter;
 import org.bukkit.Bukkit;
@@ -23,6 +24,7 @@ public class Main extends JavaPlugin {
         // Listeners
 
         getServer().getPluginManager().registerEvents(new LuckyBlockListener(), this);
+        getServer().getPluginManager().registerEvents(new CrossBowListener(), this);
 
         // Commands
 
