@@ -3,17 +3,18 @@ package com.luckyblocks.enums;
 import com.luckyblocks.events.*;
 
 public enum LuckyBlockSurprise {
-    CREEPER(3, new CreeperSurpriseHandler()),
     ANVIL(3, new AnvilSurpriseHandler()),
-    COBWEB(3, new CobwebTrapSurpriseHandler()),
     BLAZE_TOWER(3, new BlazeTowerSurpriseHandler()),
+    COBWEB(3, new CobwebTrapSurpriseHandler()),
+    CREEPER(3, new CreeperSurpriseHandler()),
+    HOLE(3, new HoleSurpriseHandler()),
     LEVITATE(3, new LevitateSurpriseHandler()),
     SONIC(3, new SonicSurpriseHandler());
 
     public int weight;
-    public LuckyBlockSurpriseHandler eventHandler;
+    public SurpriseHandler eventHandler;
 
-    LuckyBlockSurprise(int weight, LuckyBlockSurpriseHandler eventHandler) {
+    LuckyBlockSurprise(int weight, SurpriseHandler eventHandler) {
         this.weight = weight;
         this.eventHandler = eventHandler;
     }

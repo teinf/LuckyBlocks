@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class LevitateSurpriseHandler implements LuckyBlockSurpriseHandler{
+public class LevitateSurpriseHandler implements SurpriseHandler {
     @Override
     public void run(Player player, Block block) {
         int levitateDuration = (int) (Math.random() * 10) + 3;

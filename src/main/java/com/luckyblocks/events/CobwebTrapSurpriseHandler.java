@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 import java.util.Random;
 
-public class CobwebTrapSurpriseHandler implements LuckyBlockSurpriseHandler {
+public class CobwebTrapSurpriseHandler implements SurpriseHandler {
     @Override
     public void run(Player player, Block block) {
         Random random = new Random();

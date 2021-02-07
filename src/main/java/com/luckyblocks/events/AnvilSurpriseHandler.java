@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 import java.util.Random;
 
-public class AnvilSurpriseHandler implements LuckyBlockSurpriseHandler {
+public class AnvilSurpriseHandler implements SurpriseHandler {
 
     @Override
     public void run(Player player, Block block) {

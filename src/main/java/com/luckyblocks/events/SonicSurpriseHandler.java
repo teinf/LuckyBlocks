@@ -5,7 +5,7 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
-public class SonicSurpriseHandler implements LuckyBlockSurpriseHandler{
+public class SonicSurpriseHandler implements SurpriseHandler {
     @Override
     public void run(Player player, Block block) {
         new BukkitRunnable() {

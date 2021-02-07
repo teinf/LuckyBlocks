@@ -5,7 +5,7 @@ import org.bukkit.entity.Creeper;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
-public class CreeperSurpriseHandler implements LuckyBlockSurpriseHandler {
+public class CreeperSurpriseHandler implements SurpriseHandler {
     @Override
     public void run(Player player, Block block) {
         Creeper creeper = (Creeper) player.getWorld().spawnEntity(block.getLocation(), EntityType.CREEPER);
