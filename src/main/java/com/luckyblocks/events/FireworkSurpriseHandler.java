@@ -18,12 +18,11 @@ public class FireworkSurpriseHandler  implements SurpriseHandler {
 
         Location shotLocation = block.getLocation().clone().add(0, 1, 0);
 
-        for (int i = 0; i <= 25; i++) {
-
+      for (int i = 0; i < 32; i++) {
             Firework firework = (Firework) shotLocation.getWorld().spawnEntity(shotLocation, EntityType.FIREWORK);
             FireworkMeta properties = firework.getFireworkMeta();
 
-            properties.setPower(10);
+            properties.setPower(25)
 
             int r = random.nextInt(256);
             int g = random.nextInt(256);
