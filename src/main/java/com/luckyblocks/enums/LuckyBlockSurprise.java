@@ -7,6 +7,7 @@ public enum LuckyBlockSurprise {
     BLAZE_TOWER(3, new BlazeTowerSurpriseHandler()),
     COBWEB(3, new CobwebTrapSurpriseHandler()),
     CREEPER(3, new CreeperSurpriseHandler()),
+    FIREWORK(3, new FireworkSurpriseHandler()),
     HOLE(3, new HoleSurpriseHandler()),
     LEVITATE(3, new LevitateSurpriseHandler()),
     SONIC(3, new SonicSurpriseHandler());
